@@ -19,6 +19,8 @@ export const APP_PROVIDERS: any[] = [
   })
 ];
 
+export const MD_DIRECTIVES: any[] = [];
+
 // services
 export * from './services/app-config.service';
 export * from './services/name-list.service';

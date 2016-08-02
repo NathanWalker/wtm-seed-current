@@ -9,7 +9,8 @@ import {NameListService} from '../../frameworks/app/index';
   moduleId: module.id,
   selector: 'sd-home',
   templateUrl: 'home.component.html',
-  styleUrls: ['home.component.css']
+  styleUrls: ['home.component.css'],
+  providers: [NameListService]
 })
 export class HomeComponent {
   public newName: string = '';

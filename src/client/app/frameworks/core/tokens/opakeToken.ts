@@ -3,4 +3,3 @@
  */
 import {OpaqueToken} from '@angular/core';
 export const PAGE: any = new OpaqueToken('page');
-

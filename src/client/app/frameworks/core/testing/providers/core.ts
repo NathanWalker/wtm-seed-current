@@ -9,7 +9,6 @@ import {WindowService, ConsoleService, LogService} from '../../index';
 import {ANALYTICS_PROVIDERS} from '../../../analytics/index';
 
 // mocks
-import {StoreMock} from '../mocks/store.mock';
 import {WindowMock} from '../mocks/window.mock';
 
 export function TEST_CORE_PROVIDERS(options?: any): any[] {
@@ -21,8 +20,8 @@ export function TEST_CORE_PROVIDERS(options?: any): any[] {
     provide(WindowService, { useClass: (options && options.window) || WindowMock }),
     LogService,
     ANALYTICS_PROVIDERS,
-    provide(Store, { useClass: StoreMock })
-  ]; 
-  
+    Store
+  ];
+
   return providers;
 }
