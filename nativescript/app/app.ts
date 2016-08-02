@@ -5,7 +5,7 @@
 import {nativeScriptBootstrap} from 'nativescript-angular/application';
 import {NS_ROUTER_DIRECTIVES, nsProvideRouter} from 'nativescript-angular/router';
 
-// angular 
+// angular
 import {provide, enableProdMode} from '@angular/core';
 
 // libs
@@ -23,17 +23,23 @@ import {NS_APP_PROVIDERS} from './shared/nativescript/index';
 import {routes} from './app/components/app/app.routes';
 import {NSAppComponent} from './pages/app/app.component';
 import {WindowNative} from './shared/core/index';
-  
+import {registerElement} from "nativescript-angular/element-registry";
+import {PAGE} from "./app/frameworks/core/tokens/opakeToken";
+import {Page} from "ui/page";
+registerElement("CardView", () => require("nativescript-cardview").CardView);
+registerElement("StatusBar", () => require("nativescript-statusbar").StatusBar);
+
 // Uncomment when ready to publish to App Stores:
 // enableProdMode();
 
 nativeScriptBootstrap(NSAppComponent, [
-  provide(WindowService, { useClass: WindowNative }),
-  provide(TranslateLoader, {
-    useFactory: () => {
-      return new TNSTranslateLoader('assets/i18n');
-    }
-  }),
-  NS_APP_PROVIDERS,
-  nsProvideRouter(routes, { enableTracing: false })
+    provide(WindowService, {useClass: WindowNative}),
+    provide(PAGE, {useValue: Page}),
+    provide(TranslateLoader, {
+        useFactory: () => {
+            return new TNSTranslateLoader('assets/i18n');
+        }
+    }),
+    NS_APP_PROVIDERS,
+    nsProvideRouter(routes, {enableTracing: false})
 ]);

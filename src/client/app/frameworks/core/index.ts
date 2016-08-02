@@ -28,3 +28,5 @@ export * from './services/window.service';
 
 // directives
 export * from './directives/platform.directive';
+//Tokens
+export * from './tokens/opakeToken';

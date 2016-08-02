@@ -1,0 +1,17 @@
+:host{
+    transition: all 300ms ease;
+}
+md-card{
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sfns_displayregular, sans-serif;
+    background-color: #222;
+}
+md-card-title h2{
+    margin: 0 0 15px;
+    font-family: "montserratblack", sans-serif;
+    color: white;
+}

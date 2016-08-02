@@ -1,0 +1,36 @@
+<!--<table class="table table-hover margin-top">-->
+    <!--<thead class="thead-inverse">-->
+    <!--<tr>-->
+        <!--<th>Marca</th>-->
+        <!--<th>Razão Social</th>-->
+        <!--<th>Fantasia</th>-->
+        <!--<th>Endereço</th>-->
+        <!--<th>Bairro</th>-->
+        <!--<th>Cidade</th>-->
+        <!--<th>UF</th>-->
+        <!--<th>CEP</th>-->
+        <!--<th>CNPJ/CPF</th>-->
+        <!--<th>Inscrição</th>-->
+        <!--<th>Código</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--</tbody>-->
+<!--</table>-->
+<a [routerLink]="['/client', id]">
+    <md-card>
+        <md-card-title-group>
+            <md-card-title>{{ title }}</md-card-title>
+            <md-card-subtitle *ngIf="subtitle">{{ subtitle }}</md-card-subtitle>
+            <img md-card-sm-image *ngIf="thumbnail" [src]="thumbnail"/>
+        </md-card-title-group>
+        <md-card-content>
+            <p *ngIf="description">{{ description}}</p>
+        </md-card-content>
+        <md-card-footer>
+            <h5 md-subheader>Written By:</h5>
+            <span>
+          </span>
+        </md-card-footer>
+    </md-card>
+</a>

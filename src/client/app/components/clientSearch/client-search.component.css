@@ -1,0 +1,25 @@
+md-hint{
+    position: relative !important;
+    display: block;
+    color: white;
+}
+md-hint.md-right{
+    margin-left: auto;
+    margin-right: 0;
+}
+md-input{
+    min-width: 300px;
+    width: 100%;
+}
+[md-raised-button]{
+    outline: 0;
+    font-size: 11px;
+    background-color: transparent;
+    border: 1px #f96816 solid;
+    color: #f96816;
+    line-height: 30px;
+    min-width: 80px;
+    padding: 0 20px;
+    height: 30px;
+    font-family: "montserratlight","Roboto", "Helvetica Neue", sans-serif;
+}

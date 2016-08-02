@@ -1,5 +1,38 @@
 <div platform>
-  <sd-toolbar></sd-toolbar>
-  <sd-navbar></sd-navbar>
-  <router-outlet></router-outlet>
+    <md-sidenav-layout fullscreen setClass>
+        <md-sidenav #sidenav opened="false" mode="side">
+            <md-toolbar [color]="myColor">
+                <md-icon md-list-icon svgSrc="/assets/svg/logo.svg"></md-icon>
+                <span>WTM WEB</span>
+            </md-toolbar>
+            <md-nav-list dense>
+                <a md-list-item [routerLink]="['home']" routerLinkActive="active">
+                    <md-icon md-list-icon svgSrc="/assets/svg/dashboard.svg"></md-icon>
+                    <span class="helper">F1</span>
+                    <span md-line>Dashboard</span>
+                    <span md-line class="secondary">Veja estátiscas e detalhes de vendas</span>
+                </a>
+                <a md-list-item [routerLink]="['search']" routerLinkActive="active">
+                    <md-icon md-list-icon svgSrc="/assets/svg/hands.svg">
+                    </md-icon>
+                    <span class="helper">F2</span>
+                    <span md-line>Saída de Mercadoria</span>
+                    <span md-line class="secondary">Incluir, Alterar, Baixa de Contas</span>
+                </a>
+                <a md-list-item [routerLink]="['about']" routerLinkActive="active">
+                    <md-icon md-list-icon="" svgSrc="/assets/svg/about.svg"></md-icon>
+                    <span class="helper">F3</span>
+                    <span md-line>Ajuda</span>
+                    <span md-line class="secondary">Lista de atalhos e contatos</span>
+                </a>
+
+            </md-nav-list>
+        </md-sidenav>
+        <header [class.login]="navigationUrl=='/' && navigationUrl=='/login'">
+            <sd-navbar (openNav)="toggleNav()"></sd-navbar>
+        </header>
+        <main class="wrapper">
+            <router-outlet></router-outlet>
+        </main>
+    </md-sidenav-layout>
 </div>

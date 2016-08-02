@@ -1,4 +1,27 @@
-<nav>
-  <a [routerLink]="['/']">{{'HOME' | translate}}</a>
-  <a [routerLink]="['/about']">{{'ABOUT' | translate}}</a>
+<nav class="navbar navbar-dark navbar-fixed-top" *ngIf="navigationUrl!=='/' && navigationUrl!=='/login'"
+     [class.bg-faded]="navigationUrl!=='/' && navigationUrl!=='/login'">
+    <div class="container-fluid">
+        <button md-button="" (click)="openSideNav($event)" class="navbar-toggler" type="button"
+                *ngIf="navigationUrl!=='/' && navigationUrl!=='/login'">
+            <md-icon>menu</md-icon>
+        </button>
+        <a class="navbar-brand" href="">
+            Recheio Frutas e Legumes LTDA
+        </a>
+        <div class="pull-right">
+            <ul class="nav navbar-nav">
+                <li class="nav-item" *ngIf="navigationUrl!=='/' && navigationUrl!=='/login'">
+                    <a tabindex="10" md-button
+                       class="header-bar__account nav-link header-bar--clickable prism-dropdown__button--fix prism-dropdown__parent">
+                        <div class="header-bar__account-details">
+                            <p class="header-bar__account__profile-info">
+                                <span class="header-bar__account__name">Benevides</span>
+                                <span class="header-bar__account__email">beny1000@hotmail.com</span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>

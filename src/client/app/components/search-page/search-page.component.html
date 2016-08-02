@@ -1,0 +1,11 @@
+<div class="container-fluid">
+    <md-card>
+        <md-card-title class="text-md-center"><h2>Pesquisa de Cliente</h2></md-card-title>
+        <md-card-content>
+            <sd-clientSearch [query]="searchQuery$ | async" (search)="search($event)"></sd-clientSearch>
+        </md-card-content>
+    </md-card>
+</div>
+<div class="container-fluid">
+    <client-preview-list [clients]="clients$ | async"></client-preview-list>
+</div>

@@ -1,68 +1,190 @@
-/* Reset */
-html,
-body,
-div {
-  border: 0;
-  margin: 0;
-  padding: 0;
+@font-face {
+    font-family: 'montserratblack';
+    src: url('../assets/fonts/montserrat-black-webfont.woff2') format('woff2'),
+    url('../assets/fonts/montserrat-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* Box-sizing border-box */
-* {
-  box-sizing: border-box;
+@font-face {
+    font-family: 'montserratlight';
+    src: url('../assets/fonts/montserrat-light-webfont.woff2') format('woff2'),
+    url('../assets/fonts/montserrat-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sfns_displaybold';
+    src: url('../assets/fonts/system_san_francisco_display_bold-webfont.woff2') format('woff2'),
+    url('../assets/fonts/system_san_francisco_display_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sfns_displayregular';
+    src: url('../assets/fonts/system_san_francisco_display_regular-webfont.woff2') format('woff2'),
+    url('../assets/fonts/system_san_francisco_display_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sfns_displaythin';
+    src: url('../assets/fonts/system_san_francisco_display_thin-webfont.woff2') format('woff2'),
+    url('../assets/fonts/system_san_francisco_display_thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sfns_displayultralight';
+    src: url('../assets/fonts/system_san_francisco_display_ultralight-webfont.woff2') format('woff2'),
+    url('../assets/fonts/system_san_francisco_display_ultralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 /* Set up a default font and some padding to provide breathing room */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-p {
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 20px;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-ul {
-  margin: 10px 0 0 0;
-  padding: 0 0 0 20px;
-}
-
-li {
-  font-weight: 400;
-  margin-top: 4px;
-}
-
-input {
-  border: 1px solid #106cc8;
-  font-size: 14px;
-  height: 40px;
-  outline: none;
-  padding: 8px;
-}
-
-button {
-  background-color: #106cc8;
-  border-style: none;
-  color: rgba(255, 255, 255, 0.87);
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  height: 40px;
-  padding: 8px 18px;
-  text-decoration: none;
-}
-
-button:hover {
-  background-color: #28739e;
+    font-family: "montserratlight", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
 }
 
 /* platform specific */
 .desktop lang-switcher {
-  display: none;
+    display: none;
+}
+
+.not-login > md-content {
+    transition-property: all !important;
+    transition-duration: .2s, .2s, .35s !important;
+    transition-timing-function: linear, linear, ease !important;
+}
+
+* > md-content {
+    background-color: rgb(24, 24, 24);
+}
+
+.md-sidenav-side.md-sidenav-closed + md-content {
+    margin-left: 78px !important;
+}
+
+.md-sidenav-side.md-sidenav-closing + md-content {
+    margin-left: 78px !important;
+}
+
+.login .md-sidenav-side.md-sidenav-closed + md-content {
+    margin-left: 0 !important;
+}
+
+.md-sidenav-closed md-nav-list[dense] a[md-list-item].md-2-line .md-list-item {
+    padding-left: 75%;
+    transition: none;
+    position: relative;
+}
+
+md-nav-list[dense] a[md-list-item].md-2-line .md-list-item:hover {
+    background-color: #363636;
+}
+
+.md-sidenav-closed md-nav-list[dense] a[md-list-item].md-2-line .md-list-item .md-list-text {
+    display: none;
+}
+
+.md-sidenav-side md-nav-list[dense] a[md-list-item].md-2-line .md-list-item .md-list-text {
+    font-family: montserratlight, "Helvetica Neue", sans-serif;
+    color: white;
+}
+
+md-nav-list[dense] a[md-list-item].md-2-line .md-list-item svg path {
+    transition: fill 300ms ease;
+    fill: white;
+}
+
+md-nav-list[dense] a[md-list-item].md-2-line.active .md-list-item svg path {
+    fill: rgb(249, 104, 22);
+}
+
+md-nav-list[dense] a[md-list-item].md-2-line.active .md-list-item .md-list-text, md-nav-list[dense] a[md-list-item].md-2-line.active .md-list-item .helper {
+    color: rgb(249, 104, 22);
+}
+
+.md-sidenav-side [md-list-icon] svg path.cls-1 {
+    fill: #c10000;
+}
+
+.navbar-toggler md-icon svg path, .navbar-toggler md-icon svg circle.cls-1 {
+    fill: white;
+    stroke: white;
+    fill-opacity: 1;
+}
+
+.login svg path {
+    fill: white;
+    stroke: white;
+}
+
+.login nav.navbar {
+    transition: none;
+}
+
+nav.bg-faded.navbar-dark .nav-link:hover svg path, nav.bg-faded.navbar-dark .nav-item.active svg path.cls-1 {
+    fill: white;
+    stroke: white;
+}
+
+md-input {
+    font-family: montserratlight, "Helvetica Neue", sans-serif !important;
+}
+
+.md-input-underline .md-input-ripple {
+    background-color: white !important;
+}
+
+.md-input-underline {
+    border-top: 1px solid rgba(255, 255, 255, 0.38) !important;
+}
+
+.md-input-element, .md-input-placeholder.md-float, label.md-input-placeholder, .md-input-placeholder.md-empty.md-float {
+    color: white !important;
+}
+
+.md-input-placeholder.md-focused {
+    color: white !important;
+}
+
+md-sidenav md-toolbar md-toolbar-row {
+    height: 60px;
+}
+
+sd-clientPreview:nth-child(3n+2){
+    margin-left: 15px;
+    margin-right: 14px;
+}
+
+.md-sidenav-side.md-sidenav-closed + md-content sd-clientPreview md-card{
+    width: 429px;
 }

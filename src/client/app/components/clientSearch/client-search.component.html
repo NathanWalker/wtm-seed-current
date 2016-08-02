@@ -1,0 +1,18 @@
+<form>
+    <div class="md-input-block">
+        <md-input md-block [value]="query" (keyup)="keyup$.next($event)"
+                  placeholder="Procure por Marca, Razão social, Fantasia, Código, CPF/CNPJ, CEP, Bairro, Endereço, Cidade, Inscrição estadual ou UF"
+                  maxLength="100"
+                  #characterCountHintExample>
+            <md-hint align="end">{{characterCountHintExample.characterCount}} / 100</md-hint>
+        </md-input>
+    </div>
+    <div class="md-raised-button-group">
+        <button md-raised-button type="submit">F1 Marca</button>
+        <button md-raised-button>F2 Razão social</button>
+        <button md-raised-button>F3 Fantasia</button>
+        <button md-raised-button>F4 CPF/CNPJ</button>
+        <button md-raised-button>F5 Código</button>
+        <button md-raised-button>F6 CEP</button>
+    </div>
+</form>

@@ -1,0 +1,38 @@
+<div class="parallax">
+    <div class="parallax-image filter-black">
+        <img src="assets/images/bg.jpg">
+    </div>
+</div>
+<section class="login-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
+                <h1 class="text-md-center">Entrar</h1>
+                <div class="text-md-center">
+                    <md-icon svgSrc="/assets/svg/login.svg"></md-icon>
+                </div>
+                <div class="card card-login">
+                    <div class="card-block">
+                        <form class="login-form">
+                            <div class="form-group">
+                                <label>Usuário</label>
+                                <input type="email" class="form-control" placeholder="Ex: Vava">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Senha</label>
+                                <input type="password" class="form-control" placeholder="Ex: 1234SBew#">
+                            </div>
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">Mantenha-me conectado</span>
+                            </label>
+                            <button type="button" class="btn btn-success btn-fill btn-block" (click)="submit()">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
